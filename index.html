@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveMore - Break Sedentary Lifestyle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">MoveMore</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Features</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </div>
+</header>
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    header, section, footer {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #7c3aed;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background-color: #6d28d9;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #ccc;
+      border: 1px solid #666;
+    }
+    .btn-secondary:hover {
+      background-color: #1c1c1c;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #1c1c1c;
+      padding: 30px;
+      border-radius: 12px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .card h3 {
+      color: #a78bfa;
+      font-size: 36px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      background-color: #222;
+      padding: 24px;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 280px;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #121212;
+      font-size: 14px;
+    }
+
+    input[type=email] {
+      padding: 12px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .features, .stats {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <!-- Add inside your hero section -->
+<h1 style="font-size: 2em; color: #fff;" id="typing-text"></h1>
+
+<script>
+  const phrases = [
+    "Break Free from Your Chair 🪑",
+    "Boost Your Energy ⚡",
+    "Live Healthier Every Day 🌱"
+  ];
+  let phraseIndex = 0, charIndex = 0;
+  const typingTarget = document.getElementById("typing-text");
+
+  function type() {
+    if (charIndex < phrases[phraseIndex].length) {
+      typingTarget.textContent += phrases[phraseIndex].charAt(charIndex++);
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 2000);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typingTarget.textContent = phrases[phraseIndex].substring(0, --charIndex);
+      setTimeout(erase, 50);
+    } else {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  type();
+</script>
+    <div class="container">
+      <h1 style="font-size: 42px; font-weight: 800;">Break the Sedentary Cycle</h1>
+      <p style="max-width: 600px; margin: 20px auto; color: #ccc;">
+        AI-powered movement prompts, challenges & analytics to keep you active throughout the day.
+      </p>
+      <button class="btn btn-primary">Get Started</button>
+      <button class="btn btn-secondary">See How It Works</button>
+    </div>
+  </header>
+
+  <!-- Problem Section -->
+  <section style="background-color: #181818;">
+    <div class="container">
+      <h2 style="font-size: 28px; margin-bottom: 30px;">Sitting is the New Smoking. Here's Why.</h2>
+      <div class="stats">
+        <div class="card">
+          <h3>+8 hrs</h3>
+          <p>Average daily sitting time</p>
+        </div>
+        <div class="card">
+          <h3>2x Risk</h3>
+          <p>Higher chance of heart disease</p>
+        </div>
+        <div class="card">
+          <h3>-30%</h3>
+          <p>Productivity drop due to inactivity</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section>
+    <div class="container">
+      <h2 style="font-size: 28px;">How It Works</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>📱 Smart Movement Prompts</h3>
+          <p>Get real-time alerts to move based on your habits.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🎯 Interactive Challenges</h3>
+          <p>Join fun, competitive challenges to stay motivated.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📊 Progress Analytics</h3>
+          <p>Track your movement, progress, and health stats visually.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background-color: #7c3aed;">
+    <div class="container" style="color: #fff;">
+      <h2 style="font-size: 30px;">Your health can't wait.</h2>
+      <p>Join thousands who are already moving more.</p>
+      <button class="btn btn-secondary" style="color: white; border-color: white;">Start Moving Today</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+  <form id="subscribe-form">
+    <label><strong>Subscribe for tips:</strong></label><br />
+    <input type="email" id="email-input" placeholder="Your email" required />
+    <button type="submit" class="btn btn-primary" style="margin-top:10px;">Subscribe</button>
+    <p id="message" style="margin-top:10px;"></p>
+  </form>
+</div>
+    <div class="container">
+      <div style="margin-bottom: 20px;">
+        <strong>Subscribe for tips:</strong><br />
+        <input type="email" placeholder="Your email" />
+      </div>
+      <p>© 2025 MoveMore. All rights reserved. | Privacy | Terms</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+<section class="fade-in">
+  <!-- Your content -->
+</section>
+<!-- Add inside nav-container -->
+<button id="themeToggle" class="btn btn-secondary" style="margin-left: 20px;">🌙</button>
+<section class="fade-in" style="background-color: #181818;">
+  <div class="container">
+    <h2 style="font-size: 28px;">Meet Your AI Wellness Companion 🤖</h2>
+    <p style="max-width: 600px; margin: 10px auto; color: #ccc;">
+      Personalized movement prompts, motivational check-ins, and goal tracking – all from a friendly AI assistant.
+    </p>
+    <img src="https://www.medify.net/wp-content/uploads/2022/07/Blog-Cover-Picture-6.png" alt="AI assistant" style="width: 280px; margin: 30px auto;" />
+    <p><em>“Hey! Time to stretch those legs! 2-minute walk challenge unlocked.”</em></p>
+  </div>
+</section>
+<section class="fade-in">
+  <div class="container">
+    <h2 style="font-size: 28px;">Your Personalized Dashboard</h2>
+    <p style="max-width: 600px; margin: 10px auto; color: #ccc;">
+      Visualize your activity levels, screen time, breaks, and more.
+    </p>
+    <img src="https://lirp.cdn-website.com/002daba0/dms3rep/multi/opt/shutterstock_1402482545-1-1200x782-1920w.png" alt="dashboard preview" style="max-width: 90%; margin-top: 30px; border-radius: 12px;" />
+  </div>
+</section>
+<nav class="nav-links" id="navLinks">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="login.html">Login</a>
+  <a href="dashboard.html">Dashboard</a>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - MoveMore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
+    .navbar {
+      background-color: #121212;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: #ccc;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      color: #a78bfa;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      flex: 1;
+      min-width: 240px;
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+      color: #a78bfa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div style="font-weight: bold;">MoveMore Dashboard</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="login.html">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Welcome, User 👋</h1>
+    <p>Here’s your daily activity summary:</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>🪑 Sitting Time</h3>
+        <p>6h 45m today</p>
+      </div>
+      <div class="card">
+        <h3>🚶 Steps Taken</h3>
+        <p>7,230 steps</p>
+      </div>
+      <div class="card">
+        <h3>🔥 Calories Burned</h3>
+        <p>520 kcal</p>
+      </div>
+      <div class="card">
+        <h3>🎯 Challenges Completed</h3>
+        <p>3/5 daily goals</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoveMore - Sections</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #a78bfa;
+    }
+    p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #ccc;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .step {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .feature {
+      background-color: #181818;
+      padding: 25px;
+      border-radius: 12px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: #121212;
+    }
+    .testimonial {
+      max-width: 600px;
+      margin: 20px auto;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: "❝";
+      font-size: 50px;
+      color: #7c3aed;
+      position: absolute;
+      left: -30px;
+      top: -10px;
+    }
+
+    /* Call to Action */
+    .cta {
+      background: linear-gradient(90deg, #6d28d9, #9333ea);
+      padding: 50px 20px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      color: white;
+    }
+    .cta h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    .cta button {
+      background-color: #1f1f1f;
+      border: none;
+      padding: 14px 30px;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .cta button:hover {
+      background-color: #292929;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #181818;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+
+    /* Animation on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .step, .feature {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- How It Works -->
+<section class="fade-in" id="how-it-works">
+  <h2>How It Works</h2>
+  <p>MoveMore nudges you with personalized reminders, micro-activities, and gamified movement breaks to keep you active and energized.</p>
+  <div class="steps">
+    <div class="step">
+      <h3>📲 Sign Up</h3>
+      <p>Create your free account in seconds.</p>
+    </div>
+    <div class="step">
+      <h3>🎯 Set Goals</h3>
+      <p>Choose health goals that fit your lifestyle.</p>
+    </div>
+    <div class="step">
+      <h3>🕒 Get Reminded</h3>
+      <p>Get movement prompts when you've been sitting too long.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="fade-in" id="features">
+  <h2>Features</h2>
+  <p>Everything you need to break sedentary habits and build a healthier routine.</p>
+  <div class="features">
+    <div class="feature">
+      <h3>🧠 AI Assistant</h3>
+      <p>Smart nudges based on your behavior and screen time.</p>
+    </div>
+    <div class="feature">
+      <h3>💡 Micro-Workouts</h3>
+      <p>2-5 minute desk-friendly movement bursts.</p>
+    </div>
+    <div class="feature">
+      <h3>🏆 Gamified Challenges</h3>
+      <p>Unlock badges, streaks & compete with friends.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials fade-in" id="testimonials">
+  <h2>Loved By Users</h2>
+  <div class="testimonial">"I’ve started moving more during workdays thanks to MoveMore. My back pain is almost gone!" – Priya R.</div>
+  <div class="testimonial">"The AI reminders are genius. It actually gets me up every hour!" – Alex D.</div>
+  <div class="testimonial">"It’s like having a health coach on my laptop. 10/10." – Sneha M.</div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta fade-in" id="cta">
+  <h3>Ready to move smarter, feel better, and sit less?</h3>
+  <p>Join thousands taking control of their health — one step at a time.</p>
+  <button onclick="window.location.href='signup.html'">Get Started Free</button>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 MoveMore · All Rights Reserved · <a href="#" style="color:#a78bfa;">Privacy</a> · <a href="#" style="color:#a78bfa;">Terms</a>
+</footer>
+
+<!-- Scroll animation -->
+<script>
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+<!-- Add inside a section -->
+<div id="idle-timer" style="margin-top:20px; font-size: 18px; color: #ccc;">
+  You've been inactive for <span id="idle-time">0</span> seconds.
+</div>
+
+<script>
+  let idleSeconds = 0;
+  const idleTimeDisplay = document.getElementById("idle-time");
+
+  function resetTimer() {
+    idleSeconds = 0;
+  }
+
+  setInterval(() => {
+    idleSeconds++;
+    idleTimeDisplay.textContent = idleSeconds;
+    if (idleSeconds % 60 === 0 && idleSeconds > 0) {
+      alert("⏰ Time to move a little!");
+    }
+  }, 1000);
+
+  ['mousemove', 'keydown', 'scroll'].forEach(evt => {
+    document.addEventListener(evt, resetTimer, false);
+  });
+</script>
+<!-- Add in CTA or Features section -->
+<div style="margin-top: 30px;">
+  <p style="color: #ccc;">Daily Movement Goal</p>
+  <div style="background-color: #333; border-radius: 20px; height: 20px; width: 80%; margin: 0 auto;">
+    <div id="progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg,#9333ea,#a78bfa); border-radius: 20px; transition: width 1s;"></div>
+  </div>
+</div>
+
+<script>
+  // Simulate progress increase
+  let progress = 0;
+  const bar = document.getElementById("progress-bar");
+
+  const interval = setInterval(() => {
+    if (progress >= 100) {
+      clearInterval(interval);
+    } else {
+      progress += 10;
+      bar.style.width = progress + "%";
+    }
+  }, 1500);
+</script>
+<!-- Add this button somewhere in the header -->
+<button onclick="toggleTheme()" style="position:fixed;top:20px;right:20px;background:#9333ea;color:white;padding:10px 16px;border:none;border-radius:8px;cursor:pointer;">
+  Toggle Theme
+</button>
+
+<script>
+  let darkMode = true;
+
+  function toggleTheme() {
+    document.body.style.backgroundColor = darkMode ? "#ffffff" : "#0f0f0f";
+    document.body.style.color = darkMode ? "#000000" : "#ffffff";
+    darkMode = !darkMode;
+  }
+</script>
+<!-- Confetti using JS library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+  function triggerConfetti() {
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+  }
+
+  // You can call this function when a goal is reached
+  // triggerConfetti();
+</script>
